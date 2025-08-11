@@ -1,7 +1,25 @@
 <!doctype html>
 <html lang="tr">
+<head>
 <meta charset="utf-8">
 <title>Employee Card</title>
-<style>html,body,iframe{margin:0;height:100vh;width:100vw;border:0}</style>
-<iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fbarkobt%2Fzara_employee_pdfs%40main%2Fzara_employee_infos%2Fzara_employee_cards.pdf#zoom=page-fit"></iframe>
+<style>
+    html, body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    iframe {
+        border: none;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<iframe 
+    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fbarkobt%2Fzara_employee_pdfs%40main%2Fzara_employee_infos%2Fzara_employee_cards.pdf#zoom=page-fit">
+</iframe>
+</body>
 </html>
