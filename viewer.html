@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <title>Employee Card</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    html, body {
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-    }
-    iframe {
-        border: none;
-        height: 100%;
-        width: 100%;
-    }
+  html,body,iframe{margin:0;height:100%;width:100%;border:0;overflow:hidden}
 </style>
+<script>
+  // ?file=ahmet-baran.pdf gibi kullan
+  const p = new URLSearchParams(location.search);
+  const f = p.get("file") || "zara_employee_cards.pdf"; // varsayılan
+  const encoded = encodeURIComponent(location.origin + location.pathname.replace(/viewer\.html$/, '') + 'cards/' + f);
+  // pdf.js viewer ile tam sığdır
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('v').src =
+      'https://mozilla.github.io/pdf.js/web/viewer.html?file=' + encoded + '#zoom=page-fit';
+  });
+</script>
 </head>
 <body>
-<iframe 
-    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fbarkobt%2Fzara_employee_pdfs%40main%2Fzara_employee_infos%2Fzara_employee_cards.pdf#zoom=page-fit">
-</iframe>
+  <iframe id="v" title="Employee Card PDF"></iframe>
 </body>
 </html>
